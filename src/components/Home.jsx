@@ -53,8 +53,10 @@ const Home = () => {
     return (
       <>
         <Container className="d-flex justify-content-center align-items-center">
-          <div className="m-5 p-3 rounded bg-success bg-opacity-50">
-            <InputGroup className="mb-3">
+          <div className="mt-5 mb-2 p-3 rounded home shadow">
+            <h1 className="display-2 mb-3">Welcome to EpiWeather!</h1>
+            <h3 className="fw-semibold mb-2">Insert a city name to know what's the weather</h3>
+            <InputGroup className="my-3 justify-content-center">
               <FormControl
                 onSubmit={handleSubmit}
                 placeholder="Insert city name here..."
@@ -63,6 +65,7 @@ const Home = () => {
                 className="rounded-pill searchbar"
               />
               <Button
+                className="ms-2 rounded"
                 variant="warning"
                 onClick={(e) => {
                   setCityName(e.target.previousElementSibling.value);
@@ -76,9 +79,9 @@ const Home = () => {
         <Container className="justify-content-center">
           <Row className="justify-content-center">
             <Col xs={4}>
-              <Card>
+              <Card className="cardbg text-white">
                 <Card.Body>
-                  <Card.Title>{cityName}</Card.Title>
+                  <Card.Title className="fw-semibold">{cityName}</Card.Title>
                   <Card.Text>{weather.main.temp + "°C"}</Card.Text>
                   <Link className="btn btn-primary" to={`/${weather.id}`}>
                     Weather Details
@@ -93,8 +96,10 @@ const Home = () => {
   } else {
     return (
       <Container className="d-flex justify-content-center align-items-center">
-        <div className="m-5 p-3 rounded bg-success bg-opacity-50">
-          <InputGroup className="mb-3">
+        <div className="mt-5 mb-2 p-5 rounded bg-success bg-opacity-50 shadow">
+          <h1 className="display-2 mb-3">Welcome to EpiWeather!</h1>
+          <h3 className="fw-semibold mb-2 fs-4">Insert a city name to know what's the weather</h3>
+          <InputGroup className="my-3 justify-content-center">
             <FormControl
               onSubmit={handleSubmit}
               placeholder="Insert city name here..."
@@ -103,6 +108,7 @@ const Home = () => {
               className="rounded-pill searchbar"
             />
             <Button
+              className="ms-2 rounded"
               variant="warning"
               onClick={(e) => {
                 setCityName(e.target.previousElementSibling.value);

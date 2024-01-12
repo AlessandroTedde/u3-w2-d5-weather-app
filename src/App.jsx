@@ -7,7 +7,7 @@ import WeatherDetails from "./components/WeatherDetails";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App warncolor">
       <BrowserRouter>
         <Topbar brand={"EpiWeather"} claim={"The goofiest weather app"} />
         <Routes>
