@@ -4,17 +4,20 @@ import { useParams } from "react-router-dom";
 
 const WeatherDetails = () => {
   const [data, setData] = useState([]);
-  const params = useParams();
+  const { lat, lon } = useParams();
+
+  console.log(lat, lon);
 
   const fetchCity = async () => {
-    const endpoint = `https://api.openweathermap.org/data/2.5/${params.locationId}`;
+    console.log("sto fetchando le info");
+
+    const endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=44ec3e35b6cc604242ad14fd87fac22c`;
     try {
       const resp = await fetch(endpoint);
       if (resp.ok) {
         const response = await resp.json();
         console.log(response);
         setData(response);
-        // this.setState({ isLoaded: true });
       }
     } catch (error) {
       console.log(error);
@@ -23,7 +26,7 @@ const WeatherDetails = () => {
 
   useEffect(() => {
     fetchCity();
-  }, [params]);
+  }, []);
 
   return (
     <Container className="justify-content-center">

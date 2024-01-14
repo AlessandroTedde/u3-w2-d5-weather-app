@@ -12,7 +12,7 @@ function App() {
         <Topbar brand={"EpiWeather"} claim={"The goofiest weather app"} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:locationId" element={<WeatherDetails />} />
+          <Route path="/:lat/:lon" element={<WeatherDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
